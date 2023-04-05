@@ -1,0 +1,130 @@
+.title {
+    position: relative;
+    height: 100px;
+
+    background-color: black;
+
+    img {
+        object-fit: cover;
+        height: 100%;
+
+        opacity: 80%;
+    }
+
+    h2 {
+        position: absolute;
+        margin: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        font-size: 30px;
+        color: white;
+    }
+}
+
+.main {
+    max-width: 1000px;
+
+    h2 {
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+    }
+
+    h3 {
+        margin-top: 30px;
+        padding-bottom: 3px;
+        border-bottom: 1px solid gray;
+
+        font-size: 24px;
+    }
+
+    p {
+        margin: 10px;
+    }
+
+    ul {
+        list-style: none;
+        margin: 10px;
+        margin-left: 20px;
+    }
+
+}
+
+.cards {
+
+    // カード
+    &>div {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 10px;
+        padding: 15px;
+        border-radius: 30px;
+
+        filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.1));
+    }
+
+    // 画像div
+    &>div>div:nth-child(1) {
+        width: 30%;
+
+        margin: auto;
+
+        background-color: white;
+        border-radius: 50%;
+    }
+
+    // 画像
+    &>div>div:nth-child(1)>img {
+        display: block;
+        width: 70%;
+
+        margin: 15%;
+    }
+
+    // 説明div
+    &>div>div:nth-child(2) {
+        width: 65%;
+    }
+
+    // 説明タイトル
+    &>div>div:nth-child(2)>p:first-child {
+        font-size: 20px;
+    }
+
+    @media screen and (min-width: 640px) {
+        display: flex;
+        justify-content: space-around;
+
+        &>div {
+            width: 26%;
+
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        &>div>div:nth-child(1) {
+            width: 70%;
+
+            margin: 0 auto;
+        }
+
+        &>div>div:nth-child(2) {
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+}
+
+.kind {
+    &>div {
+        background-color: aliceblue;
+    }
+}
+
+.whatdo {
+    &>div {
+        background-color: #f0fff0;
+    }
+}

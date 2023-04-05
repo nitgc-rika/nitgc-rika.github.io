@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
+
+/* 全体設定 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+p,
+a,
+h1,
+h2,
+h3,
+li {
+  font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+a {
+  color: darkmagenta;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* スマホ用 */
+main {
+  margin: 0 10px;
+  padding: 20px 0;
+}
+
+/* PC用 */
+@media screen and (min-width: 960px) {
+  main {
+    width: 960px;
+    margin: 0 auto;
+  }
+}
