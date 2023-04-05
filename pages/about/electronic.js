@@ -19,9 +19,9 @@ export default function Home() {
 
                 <meta name="twitter:card" content="summary" />
                 <meta name="twitter:site" content="@nitgc_rika" />
-                <meta property="og:url" content={`https://nitgc-rika.github.io/about/electronic.html`} />
+                <meta name="twitter:title" content="電子工作班 | 群馬高専理科部" />
                 <meta property="og:description" content="群馬高専理科部 電子工作班の紹介ページです。" />
-                <meta property="og:image" content="/about/electronic/cover.jpg" />
+                <meta property="og:image" content={cover} />
             </Head>
 
             <div className={styles.title}>
