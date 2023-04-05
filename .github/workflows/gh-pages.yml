@@ -36,6 +36,9 @@ jobs:
     # プロジェクトルート直下にoutディレクトリができる
     # そのなかに、HTMLファイル群と、それらが読み込むJSファイル群を収めた_nextディレクトリがある
     - name: export
+      env:
+        SERVICE_DOMAIN: ${{ secrets.SERVICE_DOMAIN}}
+        API_KEY: ${{ secrets.API_KEY }}
       run: npm run export
 
     # しかしGitHub Pagesの仕様として_から始まるディレクトリが見えず404となる
