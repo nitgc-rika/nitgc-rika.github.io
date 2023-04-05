@@ -27,6 +27,9 @@ jobs:
     # Next.jsアプリをビルドする
     # プロジェクトルート直下に.nextディレクトリができる
     - name: build
+      env:
+        SERVICE_DOMAIN: ${{ secrets.SERVICE_DOMAIN}}
+        API_KEY: ${{ secrets.API_KEY }}
       run: npm run build
 
     # 静的なHTMLとしてNext.jsアプリを生成する
