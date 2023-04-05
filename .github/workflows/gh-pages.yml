@@ -17,7 +17,7 @@ jobs:
     - name: setup node
       uses: actions/setup-node@v1
       with:
-        node-version: '12.x'
+        node-version: '16.x'
     
     # npm install の際にキャッシュを使うよう設定
     - name: Cache dependencies
