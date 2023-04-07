@@ -20,9 +20,20 @@ jobs:
       with:
         node-version: '16.x'
 
+    # キャッシュを使用
+    - name: cache-node-module
+      uses: actions/cache@v3
+      id: node_modules_cache_id
+      env: 
+        cache-name: cache-node-module
+      with:
+        path: '**/node_modules'
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+
     # package.jsonに基づき依存パッケージをインストールする
     - name: install npm packages
-      run: npm ci
+      if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
+      run: npm i
 
     # Next.jsアプリをビルドする
     # プロジェクトルート直下に.nextディレクトリができる
