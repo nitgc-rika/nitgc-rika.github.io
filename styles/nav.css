@@ -24,7 +24,7 @@
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-    background: #373a47;
+    background: #575A4B;
     border-radius: 3px;
 }
 
@@ -57,7 +57,7 @@
 
 /* General sidebar styles */
 .bm-menu {
-    background: #373a47;
+    background: #f7f7f7;
     padding: 2.5em 1.5em 0;
     font-size: 1.15em;
 }
@@ -79,7 +79,7 @@
     margin-bottom: 20px;
     margin-left: 20px;
 
-    color: lightgray;
+    color: #575A4B;
     font-size: 25px;
 }
 
@@ -88,6 +88,6 @@
     top: 0;
     left: 0;
 
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(2px);
 }

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?Source+Code+Pro&family=Zen+Maru+Gothic&display=swap');
 
 /* 全体設定 */
 * {
@@ -11,8 +11,15 @@ a,
 h1,
 h2,
 h3,
-li {
+h4,
+li,
+blockquote
+{
   font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+code {
+  font-family: 'Source Code Pro', monospace;
 }
 
 a {
@@ -27,6 +34,10 @@ ul {
 img {
   width: 100%;
   height: auto;
+}
+
+#__next {
+  background-color: #fbfbfb;
 }
 
 /* スマホ用 */

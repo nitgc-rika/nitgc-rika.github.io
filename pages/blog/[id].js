@@ -1,8 +1,26 @@
 import Head from "next/head";
+
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc"
+import timezone from "dayjs/plugin/timezone"
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
 import { client } from "../../libs/client";
-import styles from "../../styles/Article.module.scss"
+import { renderToc } from "@/libs/render-toc";
+import styles from "../../styles/Article.module.scss";
+import { TableOfContents } from "../../components/TableOfContents";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTag } from "@fortawesome/free-solid-svg-icons";
+import { faClock } from "@fortawesome/free-regular-svg-icons";
+import { faRotate } from "@fortawesome/free-solid-svg-icons";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
 
 export default function BlogId({ blog }) {
+  const toc = renderToc(blog.content);
+
   return (
     <>
       <Head>
@@ -14,16 +32,38 @@ export default function BlogId({ blog }) {
         <meta property="og:description" content="記事の要約" />
         <meta property="og:image" content="画像のURL" />
       </Head>
-      
+
       <main className={styles.main}>
+        <div className={styles.info}>
+          <p className={styles.tag}>
+            <FontAwesomeIcon icon={faTag} />
+            {blog.tag}
+          </p>
+
+          <div className={styles.date}>
+            <p className={styles.publishedAt}>
+              <FontAwesomeIcon icon={faClock} />
+              {dayjs.utc(blog.publishedAt).tz("Asia/Tokyo").format("YYYY/MM/DD")}
+            </p>
+
+            <p className={styles.updatedAt}>
+              <FontAwesomeIcon icon={faRotate} />
+              {dayjs.utc(blog.updatedAt).tz("Asia/Tokyo").format("YYYY/MM/DD")}
+            </p>
+          </div>
+        </div>
+
         <h1 className={styles.title}>
           {blog.title}
         </h1>
 
-        <p className={styles.publishedAt}>
-          {blog.publishedAt}
+        <p className={styles.writer}>
+          <FontAwesomeIcon icon={faPen} />
+          {blog.writer} ({blog.group})
         </p>
-        
+
+        <TableOfContents toc={toc} />
+
         <div
           dangerouslySetInnerHTML={{
             __html: `${blog.content}`,

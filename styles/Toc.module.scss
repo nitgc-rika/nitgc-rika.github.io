@@ -1,0 +1,49 @@
+$sub: #575A4B;
+
+.toc {
+    margin: 0 20px;
+    margin-bottom: 30px;
+
+    padding: 10px;
+    background-color: #f7f7fc;
+
+    p {
+        margin-bottom: 5px;
+
+        padding: 5px;
+        padding-top: 0;
+
+        font-size: 20px;
+        border-bottom: 1px solid $sub;
+    }
+
+    li {
+        margin: 0 5px;
+        margin-bottom: 5px;
+
+        border-bottom: 1px solid lightgray;
+    }
+
+    :global(li.h2) {
+        margin-left: 15px;
+    }
+
+    :global(li.h3) {
+        margin-left: 30px;
+    }
+
+    a {
+        color: black;
+    }
+}
+
+.content {
+    cursor: pointer;
+
+    &::before {
+        content: '-';
+        margin: 0 5px;
+        
+        color: $sub;
+    }
+}
