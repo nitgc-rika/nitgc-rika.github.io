@@ -21,16 +21,27 @@ import { faPen } from "@fortawesome/free-solid-svg-icons";
 export default function BlogId({ blog }) {
   const toc = renderToc(blog.content);
 
+  const meta = (() => {
+    switch (blog.group[0]) {
+      case "化学班":
+        return ["nitgc_chem", "chemical.jpg"];
+      case "電子工作班":
+        return ["nitgc_rika", "electronic.jpg"];
+      case "生物班":
+        return ["nitgc_rika", "biology.jpg"];
+    }
+  })();
+
   return (
     <>
       <Head>
         <title>{`${blog.title} | 群馬高専理科部`}</title>
 
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@ユーザー名" />
+        <meta name="twitter:site" content={`@${meta[0]}`} />
         <meta property="og:url" content={`https://nitgc-rika.github.io/introduction/${blog.id}.html`} />
-        <meta property="og:description" content="記事の要約" />
-        <meta property="og:image" content="画像のURL" />
+        <meta property="og:description" content={blog.description} />
+        <meta property="og:image" content={`https://nitgc-rika.github.io/image/${meta[1]}`} />
       </Head>
 
       <main className={styles.main}>
