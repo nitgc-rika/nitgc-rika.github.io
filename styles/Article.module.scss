@@ -137,6 +137,12 @@ $radius: 10px;
 		content: '・';
 	}
 
+	ol {
+		margin: 0 10px;
+		margin-left: 30px;
+		margin-bottom: 30px;
+	}
+
 	pre {
 		margin: 0 10px;
 		margin-bottom: 30px;
@@ -192,12 +198,21 @@ $radius: 10px;
 
 	iframe {
 		margin-bottom: 30px;
-		margin: 0 10px;
+		
+		aspect-ratio: 16/9;
+		width: 70%;
+		height: 100%;
+
+		margin-left: 15%;
+
+		padding: 10px;
+		border: 1px solid lightgray;
+		box-shadow: $shadow;
 
 		@media screen and (max-width: 641px) {
-			aspect-ratio: 16/9;
-			width: calc(100% - 20px);
-			height: 100%;
+			width: calc(100% - 40px);
+
+			margin: 0 10px;
 		}
 	}
 

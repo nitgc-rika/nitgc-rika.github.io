@@ -15,7 +15,7 @@ export default function Header() {
     }
 
     return (
-        <Menu right isOpen={isOpen} onOpen={handleIsOpen} onClose={handleIsOpen}>
+        <Menu width={250} right isOpen={isOpen} onOpen={handleIsOpen} onClose={handleIsOpen}>
             <Link id="home" className="menu-item" href="/" onClick={closeSidebar}>Home</Link>
             <Link id="blog" className="menu-item" href="/blog" onClick={closeSidebar}>Blog</Link>
             <Link id="about" className="menu-item" href="/about" onClick={closeSidebar}>About</Link>

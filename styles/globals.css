@@ -42,14 +42,15 @@ img {
 
 /* スマホ用 */
 main {
-  margin: 0 10px;
-  padding: 20px 0;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px 10px;
 }
 
 /* PC用 */
 @media screen and (min-width: 960px) {
   main {
-    width: 960px;
+    width: 760px;
     margin: 0 auto;
   }
 }
