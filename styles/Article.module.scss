@@ -203,7 +203,7 @@ $radius: 10px;
 		width: 70%;
 		height: 100%;
 
-		margin-left: 15%;
+		margin-left: calc(15% - 10px);
 
 		padding: 10px;
 		border: 1px solid lightgray;
